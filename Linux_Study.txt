@@ -1,7 +1,7 @@
 ﻿
 Unix-Linux编程实践教程 & Linux学习
 
-第八章
+第八章 进程和程序： 编写命令解释器shell
 
   8.1 进程=运行中的程序
   一个程序是存储在文件中的机器指令序列。一般他是由编译器将源代码编译成二进制个格式的代码。
@@ -52,6 +52,13 @@ argv[]传给程序。注意，将数组的第一个元素置为程序的名称�
   wait作用：唤醒父进程（通知）
 	   通过分析*status的对应位值得出子进程的退出状态（通信）
      git push origin :dev 删除对应的远程仓库的dev分支	8:52 PM 12/2/2016
+  
+  8.6 思考：用进程编程
+  execvp/exit 就像 call/return
+  （1）call/return （2）exec/exit,fork/exit
+  注：exec传递的参数必须是字符串。
+
+第九章 可编程的shell、shell变量和环境：编写自己的shell
 
 
 
