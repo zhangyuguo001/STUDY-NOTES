@@ -67,13 +67,16 @@ argv[]传给程序。注意，将数组的第一个元素置为程序的名称�
 	staged:
 		git reset HEAD file		 将file放到工作区
 
-	Linux修改环境变量，在文件"~/.bashrc"中实现修改,PATH只针对当前用户生效。	4:19 PM 12/7/2016
-	 注：如果在/etc/bashrc中设置，则为全局用户所使用。
-第九章 可编程的shell、shell变量和环境：编写自己的shell
+	Linux修改环境变量，在文件"~/.bashrc"中实现修改,PATH只针对当前用户生效。	
+	 注：如果在/etc/bashrc中设置，则为全局用户所使用。（增设alias命令配置同理）	4:19 PM 12/7/2016
 
 	ln -s /../.../filename 		创建"/../.../filename"的硬链接
 	rm -rf filename  		删除filename的硬链接（注：参数为"filename"不是"filename/"）
-										6:47 PM 12/7/2016	
+										6:47 PM 12/7/2016
+
+第九章 可编程的shell、shell变量和环境：编写自己的shell
+
+		
 
 
 
