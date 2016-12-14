@@ -51,6 +51,7 @@ argv[]传给程序。注意，将数组的第一个元素置为程序的名称�
   wait系统调用同时从内核取得退出状态或者信号序列以告诉子进程是如何结束的。
   wait作用：唤醒父进程（通知）
 	   通过分析*status的对应位值得出子进程的退出状态（通信）
+
 	git push origin :dev
 	git push origin --delete dev 删除对应的远程仓库的dev分支	8:52 PM 12/2/2016
   
@@ -78,8 +79,21 @@ argv[]传给程序。注意，将数组的第一个元素置为程序的名称�
 
   9.2 什么是以及为什么要使用shell脚本语言
   shell是一个编程语言解释器，这个解释器解释从键盘输入的命令，也解释存储在脚本中的命令序列。	
-
-
+	
+	使用 git push 简短提交代码的配置：
+	  git config --global push.default simple 	只提交你当前所在的分支
+	  git config --global push.default matching  	提交本地所有的分支
+										11:00 AM 12/14/2016
+	解决git push每次都需要输入用户名和密码:
+	  分析：因为采用的是https方式提交代码，采用ssh方式（只需要在版本库中添加用户的SSH key值实现便捷提交）
+   	  git remote rm origin 						    先删除所关联的远程库origin
+	  git remote add origin git@github.com:username/repository.git	    关联一个远程库repository
+	  git push -u origin master 	
+	注：我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分
+	   支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
+	  ssh-keygen -t rsa -C "youremail@example.com"		创建SSH Key
+	
+	git reset --hard commit_id 	回退版本命令				 2:03 PM 12/14/2016
 
 
 
