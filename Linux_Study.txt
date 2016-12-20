@@ -61,7 +61,7 @@ argv[]传给程序。注意，将数组的第一个元素置为程序的名称�
   注：exec传递的参数必须是字符串。
 
 	git branch --track dev origin/<branch> OR git branch --set-upstream-to dev origin/<branch>
-		 				    指定本地的dev分支与远程origin/<branch>分支的链接	         											10:57 AM 12/7/2016
+		 				    指定本地的dev分支与远程origin/<branch>分支的链接	    10:57 AM 12/7/2016
 	unstaged:
 		git checkout -- file		 丢弃file文件的修改
 		git checkout .			 丢弃工作区的修改
@@ -133,8 +133,20 @@ argv[]传给程序。注意，将数组的第一个元素置为程序的名称�
 	(2)do_control_command处理关键字if，then,和fi。每个关键字都是区域的界标。这个函数更新状态变量并执行必
 	要的操作。
 	(3)ok_to_execute根据当前的状态和条件命令的结果返回一个boolean值，说明能否执行当前的命令。
+	练习：新加入的controlflow.c文件中，没有对if语句中的else加以处理，留作练习。
+  9.5 shell变量：局部和全局
+    略乱。
 	
-	
+  9.6 环境：个性化设置
+    Unix允许用户在称之为环境的地方以变量的形式存放这些设置，很多个性化的设置由环境中的变量来记录。
+    
+	环境（environment）的定义及如何工作：
+	  环境是每个程序都可以存取的一个字符串数组。每个数组中的字符串都以valname=value这样的形式出现，数组的
+	地址被存放在一个名为environ的全局变量里。 环境就是以environ指向的字符串数组，读环境就是读这个字符串数
+	组。改变环境就是改变字符串、改变这个数组中的指针或者将这个全局指针指向其他数组。
+	  
+	  fork完整的复制父进程，包括代码和数据，数据中包括了环境。exec清除原来进程中的所有代码和数据，插入新程序
+	的代码和数据。只有通过在exexvp传递的参数数据和存储在环境中的字符串可以从旧程序复制到新程序。
 	
 
 
